@@ -1,0 +1,113 @@
+[
+    {
+        "id" : 1,
+        "type": "hoodie",
+        "size":"md",
+        "img": "https://i.ibb.co/gdnZVPm/pngegg.png",
+        "name": "Hoodie-1",
+        "color": "Black",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 35.00
+    },
+    {
+        "id" : 2,
+        "type": "hoodie",
+        "size":"md",
+        "img": "https://i.ibb.co/9ggLJbv/pngegg-3.png",
+        "name": "Hoodie-2",
+        "color": "White",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 32.00
+    },
+    {
+        "id" : 3,
+        "type": "hoodie",
+        "size":"lg",
+        "img": "https://i.ibb.co/XCwmwHb/pngegg-2.png",
+        "name": "Hoodie-3",
+        "color": "Blue",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 37.00
+    },
+    {
+        "id" : 4,
+        "type": "hoodie",
+        "size":"lg",
+        "img": "https://i.ibb.co/hmNNTvP/pngegg-4.png",
+        "name": "Hoodie-4",
+        "color": "Red",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 45.00
+    },
+    {
+        "id" : 5,
+        "type": "hoodie",
+        "size":"Xl",
+        "img": "https://i.ibb.co/c8Jt5xX/pngegg-5.png",
+        "name": "Hoodie-5",
+        "color": "Green",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 34.00
+    },
+    {
+        "id" : 6,
+        "type": "shart",
+        "size":"lg",
+        "img": "https://i.ibb.co/kJq3ppd/dress-shirt-PNG8113.png",
+        "name": "Pink Shart",
+        "color": "Pink",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 62.00
+    },
+    {
+        "id" : 7,
+        "type": "shart",
+        "size":"md",
+        "img": "https://i.ibb.co/mCFWsJJ/dress-shirt-PNG8117.png",
+        "name": "Black Shart",
+        "color": "Black",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 55.00
+    },
+    {
+        "id" : 8,
+        "type": "shart",
+        "size":"Xl",
+        "img": "https://i.ibb.co/bX0cFt0/dress-shirt-PNG8061.png",
+        "name": "White Shart",
+        "color": "White",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 57.00
+    },
+    {
+        "id" : 9,
+        "type": "pant",
+        "size":"lg",
+        "img": "https://i.ibb.co/rbxT1M2/pngegg-6.png",
+        "name": "Pant -1",
+        "color": "Yellow",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 75.00
+    },
+    {
+        "id" : 10,
+        "type": "pant",
+        "size":"md",
+        "img": "https://i.ibb.co/CpGxKjn/pngegg-7.png",
+        "name": "Pant-2",
+        "color": "black",
+        "available" : "In Stock",
+        "count" : 1,
+        "price" : 85.00
+    }
+
+]
