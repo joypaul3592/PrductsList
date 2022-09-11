@@ -11,6 +11,8 @@ const Products = ({ handelCart }) => {
     const [filterValue, setFilterValue] = useState([])
     const [size, setSize] = useState('all');
     const [inputValue, setInputValue] = useState('');
+    const [onButton, setOnBUtton] = useState(false);
+    // const [inputValues, setInputValues] = useState({})
 
     useEffect(() => {
         fetch('/Products.json')
@@ -59,69 +61,51 @@ const Products = ({ handelCart }) => {
 
 
 
+
     let data = []
-    const handelValue = ({ id, countStore }) => {
-        console.log(countStore);
+    const handelValue = ({ id }) => {
         const newArr = productsData.filter(data => data.id == id);
         const duble = data.find(d => d.id == id)
         if (duble) {
             const newArr = data.filter(da => da.id !== duble.id);
             data = newArr
         } else {
-            if (countStore.length) {
-                console.log(countStore);
-                console.log(newArr[0].id)
-                const newId = newArr[0].id
-                const fis = countStore.filter(cu => cu.id = newId)
-                console.log(fis);
-                data.push(...newArr)
-            }
+            data.push(...newArr)
         }
-        console.log(data)
-
 
     }
+    console.log(data)
 
 
 
 
-    const countStore = []
     const handelCount = ({ value, id }) => {
+
         if (value) {
             const ProductCount = data.filter(d => d.id == id);
-            console.log(ProductCount)
             if (ProductCount.length) {
                 console.log('if');
                 const objIndex = data.findIndex((obj => obj.id == id));
                 data[objIndex].count = value;
-            } else {
-                const Product = countStore.filter(da => da.id == id);
-                console.log(Product)
-                if (Product.length) {
-                    console.log('if');
-                    const objIndex = countStore.findIndex((obj => obj.id == id));
-                    countStore[objIndex].count = value;
-                } else {
-                    const countObj = [{ count: value, id: id }]
-                    countStore.push(...countObj)
-                }
             }
         }
-        console.log(countStore)
+        console.log(data)
     }
 
-
-
-
-
-
-
-
+    // const handleChange = ({ target, id }) => {
+    //     console.log(id)
+    //     setInputValues({
+    //         ...inputValues,
+    //         count: target.value,
+    //         id: id
+    //     })
+    // }
+    // console.log(inputValues)
 
 
     return (
         <div className=' max-w-7xl mx-auto px-10'>
-
+            <h1 className=' text-2xl font-bold text-sky-500 my-10'>Products list</h1>
             <div className=' flex items-center justify-between  py-3 '>
                 <div className=' flex items-center'>
                     <select
@@ -180,9 +164,12 @@ const Products = ({ handelCart }) => {
 
 
                             <from className=' flex items-center '>
-                                <input onClick={(e) => handelCount({ value: e.target.value, id: product.id })} className='w-10 pl-2 text-sm font-semibold mr-1 py-[2px] placeholder:text-gray-900 bg-gray-200' type="number" name={product?.name} placeholder='1' />
+                                <input
+                                    onClick={(e) => handelCount({ value: e.target.value, id: product.id })}
+                                    // onChange={({ target }) => handleChange({ target: target, id: product.id })}
+                                    className={`w-10 pl-2 text-sm font-semibold mr-1 py-[2px] placeholder:text-gray-900 bg-gray-200 `} type="number" name={product?.name} placeholder='1' />
 
-                                <label onClick={(e) => handelValue({ id: product?.id, countStore })} className=' cursor-pointer py-1 flex mx-1' htmlFor={product?.name}> <BsFillCartDashFill />  <input className='bg-white ml-3' type="checkbox" id={product?.name} name={product?.name} /> </label>
+                                <label onClick={(e) => handelValue({ id: product?.id }, setOnBUtton(true))} className=' cursor-pointer py-1 flex mx-1' htmlFor={product?.name}> <BsFillCartDashFill />  <input className='bg-white ml-3' type="checkbox" id={product?.name} name={product?.name} /> </label>
                             </from>
                         </div>
 
