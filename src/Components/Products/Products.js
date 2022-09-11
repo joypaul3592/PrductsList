@@ -11,8 +11,6 @@ const Products = ({ handelCart }) => {
     const [filterValue, setFilterValue] = useState([])
     const [size, setSize] = useState('all');
     const [inputValue, setInputValue] = useState('');
-    const [onButton, setOnBUtton] = useState(false);
-    // const [inputValues, setInputValues] = useState({})
 
     useEffect(() => {
         fetch('/Products.json')
@@ -59,9 +57,6 @@ const Products = ({ handelCart }) => {
     }, [selectValue, size, inputValue])
 
 
-
-
-
     let data = []
     const handelValue = ({ id }) => {
         const newArr = productsData.filter(data => data.id == id);
@@ -74,10 +69,6 @@ const Products = ({ handelCart }) => {
         }
 
     }
-    console.log(data)
-
-
-
 
     const handelCount = ({ value, id }) => {
 
@@ -89,18 +80,7 @@ const Products = ({ handelCart }) => {
                 data[objIndex].count = value;
             }
         }
-        console.log(data)
     }
-
-    // const handleChange = ({ target, id }) => {
-    //     console.log(id)
-    //     setInputValues({
-    //         ...inputValues,
-    //         count: target.value,
-    //         id: id
-    //     })
-    // }
-    // console.log(inputValues)
 
 
     return (
@@ -166,10 +146,9 @@ const Products = ({ handelCart }) => {
                             <from className=' flex items-center '>
                                 <input
                                     onClick={(e) => handelCount({ value: e.target.value, id: product.id })}
-                                    // onChange={({ target }) => handleChange({ target: target, id: product.id })}
                                     className={`w-10 pl-2 text-sm font-semibold mr-1 py-[2px] placeholder:text-gray-900 bg-gray-200 `} type="number" name={product?.name} placeholder='1' />
 
-                                <label onClick={(e) => handelValue({ id: product?.id }, setOnBUtton(true))} className=' cursor-pointer py-1 flex mx-1' htmlFor={product?.name}> <BsFillCartDashFill />  <input className='bg-white ml-3' type="checkbox" id={product?.name} name={product?.name} /> </label>
+                                <label onClick={(e) => handelValue({ id: product?.id })} className=' cursor-pointer py-1 flex mx-1' htmlFor={product?.name}> <BsFillCartDashFill />  <input className='bg-white ml-3' type="checkbox" id={product?.name} name={product?.name} /> </label>
                             </from>
                         </div>
 
