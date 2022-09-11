@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Checkout = ({ data, proCount }) => {
-    console.log(data, proCount);
+const Checkout = ({ datapass, proCount }) => {
+    const data = datapass;
+    const proCounts = proCount
+    console.log(data);
+    console.log(proCounts);
+
     return (
         <div>
-            {/* {
-                data.map(d => <h1>{d.name}</h1>)
-            } */}
-            <h1>Checkout</h1>
+            <h1>Checkout {data.length}</h1>
         </div>
     );
 };
